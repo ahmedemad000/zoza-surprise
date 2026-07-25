@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-blush-50: #fff8f5;
+  --color-blush-100: #fbe9e4;
+  --color-blush-200: #f6d6da;
+  --color-rose-300: #e8a9b4;
+  --color-rose-400: #d9808f;
+  --color-rose-500: #c15b6e;
+  --color-rose-600: #a8455a;
+  --color-wine-700: #4a2436;
+  --color-wine-800: #3a1c2a;
+  --color-wine-900: #23121a;
+  --color-gold-300: #f0d9a3;
+  --color-gold-400: #dcb46a;
+  --color-gold-500: #c2954a;
+  --color-plum-900: #2a1420;
+
+  --font-script: 'Great Vibes', cursive;
+  --font-display: 'Playfair Display', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-utility: 'Marcellus', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-blush-50);
+  color: var(--color-wine-700);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-rose-400);
+  color: #fff;
+}
+
+.section-glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(226, 168, 178, 0.25), transparent 70%),
+    radial-gradient(40% 40% at 85% 100%, rgba(220, 180, 106, 0.15), transparent 70%);
+}
+
+.night-glow {
+  background:
+    radial-gradient(70% 60% at 50% 20%, rgba(240, 217, 163, 0.14), transparent 65%),
+    linear-gradient(180deg, var(--color-plum-900), var(--color-wine-900));
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(220, 180, 106, 0.35);
+}
+
+.text-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
